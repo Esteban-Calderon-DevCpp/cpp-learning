@@ -3,16 +3,18 @@
 using namespace std;
 
 int suma(int,int);
+int resta(int,int);
+int multiplicacion(int,int);
 
 int main(){
 
-	int (*ptr)(int,int);
+	int (*operaciones[3])(int,int) = {suma,resta,multiplicacion};
+	
 	int a = 2;
 	int b = 3;
 	
-	ptr = suma;
+	cout<<operaciones[0](a,b);
 	
-	cout<<ptr(a,b);
 
 	return 0;
 }
@@ -22,5 +24,19 @@ int suma(int a,int b){
 	suma = a + b;
 	
 	return suma; 
+}
+int resta(int a,int b){
+	int resta = 0;
+	
+	resta = a - b;
+	
+	return resta; 	
+}
+int multiplicacion(int a,int b){
+	int multiplicacion = 0;
+	
+	multiplicacion = a * b;
+	
+	return multiplicacion;
 	
 }
